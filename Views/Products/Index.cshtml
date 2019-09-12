@@ -1,0 +1,30 @@
+﻿@model IEnumerable<disinterest.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="@item.ImageURL" alt="Card image cap" href="@item.ProductPage">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name @item.Price</h5>
+                        <p class="card-text">@item.Description</p>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
